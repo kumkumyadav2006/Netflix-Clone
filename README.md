@@ -1,6 +1,8 @@
 🎬 Netflix Clone
 
 A responsive Netflix-inspired streaming website built using HTML, CSS and JavaScript.
+LIVE DEMO
+https://netflix-clone-gilt-sigma-51.vercel.app/
 
 This project was created to practice frontend development concepts such as responsive layouts, DOM manipulation, form validation, dropdowns, FAQ accordions, sliders and basic JavaScript interactions.
 

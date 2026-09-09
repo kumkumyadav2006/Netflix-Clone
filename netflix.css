@@ -1,0 +1,748 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    color: #fff;
+    font-family:Arial, sans-serif;
+}
+.main-page{
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.65)
+    ),url(bg.jpg);
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 80vw;
+    height: 62px;
+    margin: auto;
+}
+.logo img{
+    width: 150px;
+    margin-top: 30px;
+}
+.nav-right{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.language-selector{
+    position: relative;
+}
+.language-btn{
+    background: transparent;
+    color: white;
+    border: 1px solid #777;
+    border-radius: 4px;
+    padding: 8px 14px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.language-btn span{
+    margin-left: 5px;
+    font-size: 10px;
+}
+.language-dropdown{
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 118px;
+    background: white;
+    border-radius: 4px;
+    top: calc(100%+5px);
+    overflow: hidden;
+    z-index: 100;
+}
+.language-option{
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    background: white;
+    color: black;
+    text-align: left;
+    cursor: pointer;
+}
+.language-option:hover{
+    background: #ddd;
+}
+.language-dropdown.active{
+    display: block;
+}
+.signin-btn{
+    background: #e50914;
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.signin-btn:hover{
+    background: #c11119;
+}
+.hero-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+   min-height: 75vh;
+   padding: 20px;
+}
+.hero-section h1{
+    font-size: 4rem;
+    max-width: 800px;
+    font-weight: 900;
+    line-height: 1.05;
+}
+.hero-section h3{
+    margin-top: 20px;
+    font-size: 1.4rem;
+}
+.hero-section p{
+    margin-top: 20px;
+    font-size: 1rem;
+}
+.email-part{
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+.email-part input{
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #777;
+    padding: 16px;
+    width: 350px;
+}
+.email-part button{
+    background: #e50914;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0 25px;
+    cursor: pointer;
+}
+.hero-email-error {
+
+    color: #ff6b6b;
+
+    font-size: 14px;
+
+    margin-top: 8px;
+
+    display: none;
+}
+.trending{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 0;
+    margin-top: 60px;
+}
+.trending h2{
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+}
+.slider{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.cards{
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px;
+    scroll-behavior: smooth;
+}
+.cards::-webkit-scrollbar{
+    display: none;
+}
+.card{
+    position: relative;
+    flex: 0 0 180px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.card:hover{
+    transform: scale(1.05);
+}
+.card img{
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.number{
+    position: absolute;
+    bottom: -15px;
+    left: -10px;
+    font-size: 70px;
+    font-weight:900 ;
+    color: #000;
+    z-index: 2;
+    -webkit-text-stroke: 3px white;
+}
+.arrow{
+    position: absolute;
+    top: 50%;
+    height: 100px;
+    width: 45px;
+    border: none;
+    transform: translateY(-50%);
+    z-index: 10;
+    border-radius: 8px;
+    color: white;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    transition: 0.3s;
+}
+.arrow:hover{
+background: rgba(255, 255, 255, 0.25);
+}
+.left-arrow{
+    left: 0;
+}
+.right-arrow{
+    right: 0;
+}
+.reason-to-join{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 0;
+}
+.reason-to-join h2{
+    font-size: 1.7rem;
+    margin-bottom: 25px;
+}
+.reason-container{
+    display: grid;
+    grid-template-columns:repeat(4,1fr) ;
+    gap: 20px;
+}
+.reason-card{
+    min-height: 280px;
+    padding: 25px;
+    position: relative;
+    background: linear-gradient(135deg, #1c1738, #26132c);
+    border-radius: 18px;
+    transition: 0.3s;
+}
+.reason-card:hover{
+    transform: translateY(-8px);
+}
+.reason-card h3{
+    font-size: 1.4rem;
+}
+.reason-card p{
+    margin-top: 15px;
+    color: #ccc;
+    line-height: 1.5;
+}
+.reason-card i{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+     font-size: 45px;
+     color: #ff2a7f;
+}
+.faq{
+    width: 90%;
+    padding: 50px 0;
+    margin: auto;
+    max-width: 1200px;
+}
+.faq h2{
+    font-size: 1.7rem;
+    margin-bottom: 25px;
+}
+.faq-box{
+    margin-bottom: 8px;
+}
+.faq-question{
+    width: 100%;
+    min-height: 80px;
+    padding: 20px 25px;
+    border: none;
+    background: #2d2d2d;
+    color: white;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1.3rem;
+}
+.faq-question i{
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: normal;
+    margin-left: 20px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+.faq-question span{
+    flex: 1;
+}
+.faq-question:hover{
+    background: #414141;
+}
+.faq-answer{
+    max-height: 0;
+    overflow: hidden;
+    background:  #2d2d2d;
+    transition: 0.3s;
+}
+.faq-answer p{
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #ddd;
+    padding: 0 25px 25px;
+}
+.faq-box.active .faq-answer {
+
+    max-height: 300px;
+}
+
+
+.faq-box.active
+.faq-question i {
+
+    transform: rotate(45deg);
+}
+.last{
+    width: 90%;
+    padding: 30px 0 70px;
+    margin: auto;
+    max-width: 900px;
+    text-align: center;
+}
+.last p{
+    margin-bottom: 20px;
+}
+.last-email{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.last-email input{
+    width: 350px;
+    padding: 16px;
+    background: transparent;
+    border: 1px solid #777;
+    color: white;
+    border-radius: 4px;
+}
+.last-email button{
+    padding: 0 25px;
+    border: none;
+    color: white;
+    background: #e50914;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.bottom-email-error {
+
+    color: #ff6b6b;
+
+    font-size: 14px;
+
+    margin-top: 8px;
+
+    text-align: center;
+
+    display: none;
+}
+.footer{
+    width: 90%;
+    margin: auto;
+    max-width: 1200px;
+    padding: 50px 0;
+    color: #aaa;
+}
+.questions{
+     margin-bottom: 30px;
+}
+.footer-links{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 25px;
+}
+.footer-links ul{
+    list-style: none;
+}
+.footer-links li{
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: underline;
+}
+.country{
+  margin-top: 25px;
+}
+.recaptcha{
+    margin-top: 20px;
+    font-size: 13px;
+    color: #777;
+}
+.recaptcha span{
+    color: #448ef7;
+    cursor: pointer;
+}
+.footer-language{
+    position: relative;
+    display: inline-block;
+    margin-top: 25px;
+}
+.footer-language-btn{
+    min-width: 130px;
+    padding: 9px 14px;
+    background: transparent;
+    color: white;
+     border: 1px solid #777;
+     border-radius: 4px;
+     font-size: 14px;
+     cursor: pointer;
+     display: flex;
+     align-self: center;
+     justify-content: space-between;
+     gap: 10px;
+}
+.footer-language-btn span {
+font-size: 10px;
+}
+.footer-language-dropdown{
+    position: absolute;
+    display: none;
+    left: 0;
+    width: 130px;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 1000;
+    bottom: calc(100% + 5px);
+}
+.footer-language-dropdown.active{
+    display: block;
+}
+.footer-language-option{
+width: 100%;
+padding: 10px 14px;
+border: none;
+background: white;
+color: black;
+text-align: left;
+font-size: 14px;
+cursor: pointer;
+}
+.footer-language-option:hover{
+    background: #ddd;
+}
+
+@media (max-width: 900px) {
+
+    .navbar {
+        max-width: 90%;
+    }
+
+    .logo img {
+        width: 125px;
+    }
+
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+
+    .hero-section h3 {
+        font-size: 1.2rem;
+    }
+
+    .hero-section p {
+        font-size: 0.95rem;
+    }
+
+    .reason-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+        flex: 0 0 160px;
+    }
+
+    .card img {
+        height: 240px;
+    }
+
+}
+@media (max-width: 600px) {
+
+    
+
+    .navbar {
+        width: 90%;
+        height: 70px;
+    }
+
+    .logo img {
+        width: 100px;
+        margin-top: 15px;
+    }
+
+    .nav-right {
+        gap: 6px;
+    }
+
+    .language-btn {
+        padding: 7px 9px;
+        font-size: 12px;
+    }
+
+    .signin-btn {
+        padding: 7px 11px;
+        font-size: 12px;
+    }
+
+
+    
+    .main-page {
+        min-height: 700px;
+        height: auto;
+        background-position: center;
+    }
+
+    .hero-section {
+        min-height: 570px;
+        padding: 20px 15px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.2rem;
+        line-height: 1.1;
+    }
+
+    .hero-section h3 {
+        font-size: 1rem;
+        margin-top: 18px;
+    }
+
+    .hero-section p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        max-width: 330px;
+    }
+
+
+
+
+    .email-part {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .email-part input {
+        width: 100%;
+        max-width: 400px;
+        padding: 14px;
+    }
+
+    .email-part button {
+        min-height: 50px;
+        width: 150px;
+        padding: 0 15px;
+        font-size: 16px;
+    }
+
+
+
+    .trending {
+        width: 90%;
+        padding: 40px 0;
+        margin-top: 30px;
+    }
+
+    .trending h2 {
+        font-size: 1.4rem;
+    }
+
+    .cards {
+        gap: 12px;
+        padding: 10px 5px;
+    }
+
+    .card {
+        flex: 0 0 130px;
+    }
+
+    .card img {
+        height: 195px;
+        border-radius: 7px;
+    }
+
+    .number {
+        font-size: 50px;
+        bottom: -12px;
+        left: -6px;
+        -webkit-text-stroke: 2px white;
+    }
+
+    .arrow {
+        width: 35px;
+        height: 75px;
+        font-size: 25px;
+    }
+
+
+
+
+    .reason-to-join {
+        width: 90%;
+        padding: 40px 0;
+    }
+
+    .reason-to-join h2 {
+        font-size: 1.4rem;
+    }
+
+    .reason-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .reason-card {
+        min-height: 240px;
+        padding: 22px;
+    }
+
+    .reason-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .reason-card p {
+        font-size: 0.95rem;
+    }
+
+    .reason-card i {
+        font-size: 40px;
+        right: 18px;
+        bottom: 18px;
+    }
+
+    .faq {
+        width: 90%;
+        padding: 40px 0;
+    }
+
+    .faq h2 {
+        font-size: 1.4rem;
+    }
+
+    .faq-question {
+        min-height: 70px;
+        padding: 18px;
+        font-size: 1rem;
+    }
+
+    .faq-question i {
+        width: 30px;
+        height: 30px;
+        font-size: 22px;
+        margin-left: 10px;
+    }
+
+    .faq-answer p {
+        font-size: 0.95rem;
+        padding: 0 18px 20px;
+    }
+
+
+
+    .last {
+        width: 90%;
+        padding: 30px 0 50px;
+    }
+
+    .lasts {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .last-email {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .last-email input {
+        width: 100%;
+        padding: 14px;
+    }
+
+    .last-email button {
+        min-height: 50px;
+        width: 150px;
+        font-size: 16px;
+    }
+
+
+
+
+    .footer {
+        width: 90%;
+        padding: 40px 0;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 20px;
+    }
+
+    .footer-links li {
+        font-size: 13px;
+        margin-bottom: 13px;
+    }
+
+    .questions {
+        font-size: 14px;
+    }
+
+    .country {
+        font-size: 14px;
+    }
+
+    .recaptcha {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+}
+

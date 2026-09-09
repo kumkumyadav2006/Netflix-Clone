@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Netflix</title>
+    <link rel="stylesheet" href="signin.css">
+</head>
+<body>
+    <header class="signin-header">
+        <img src="netflix logo.png" alt="Netflix">
+</header>
+<main class="signin-page">
+    <div class="signin-box">
+        <h1>Sign In</h1>
+    
+    <form id="signinForm">
+        <input type="text" id="email"     placeholder="Email or mobile number" required>
+        <input type="password" id="password"    placeholder="Password" required>
+        <button type="submit" class="continue-btn"  id="continueBtn" > Continue</button>
+        <div class="or">OR</div>
+        <button type="button" class="code-btn"  id="codeBtn">Use a Sign-In code</button>
+        <p class="code-message" id="codeMessage">
+    We'll send a sign-in code to your email or mobile number.
+</p>
+        <a href="#" class="forgot-link"  id="forgotPassword">
+            Forgot Password?
+
+        </a>
+        <div
+    class="forgot-message"
+    id="forgotMessage">
+       <h3>Reset your password</h3>
+    <p>
+        Enter your email or mobile number
+        and we'll help you reset your password.
+    </p>
+
+    <input
+        type="text"
+        id="resetEmail"
+        placeholder="Email or mobile number"
+    >
+     <button
+        type="button"
+        id="resetBtn"
+    >
+        Send reset link
+    </button>
+
+</div>
+        <label class="remember">
+            <input type="checkbox">Remember me
+        </label>
+        <p class="signup-text">
+            New to Netflix?
+            <a href="signup.html">Sign up now</a>
+        </p>
+        <p class="recaptcha-text">
+              This page is protected by Google reCAPTCHA
+            to ensure you're not a bot.
+            <span>Learn More</span>
+        </p>
+    </form>
+    </div>
+</main>
+<footer class="signin-footer">
+    <p> Questions? Call 000-800-919-1743</p>
+    <div class="signin-footer-links">
+        <a href="#">FAQ</a>
+          <a href="#">
+                Help Centre
+            </a>
+
+            <a href="#">
+                Terms of Use
+            </a>
+
+            <a href="#">
+                Privacy
+            </a>
+
+            <a href="#">
+                Cookie Preferences
+            </a>
+
+            <a href="#">
+                Corporate Information
+            </a>
+    </div>
+</footer>
+<script>
+    const signinForm=document.getElementById("signinForm");
+    const emailInput=document.getElementById("email")
+    const passwordInput =document.getElementById("password");
+    const continueBtn = document.getElementById("continueBtn");
+    const codeBtn = document.getElementById("codeBtn");
+    const codeMessage = document.getElementById("codeMessage");
+    signinForm.addEventListener("submit",(event)=>{
+event.preventDefault()
+if(email.value.trim()===""){
+    alert("Please enter your email or mobile number")
+    email.focus()
+    return;
+}
+const emailPattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if(!emailPattern.test(emailInput.value.trim())){
+    alert("Please enter a valdi email address")
+    emailInput.focus()
+    return
+}
+if(password.value.trim()===""){
+    alert("Please enter your password")
+    password.focus()
+    return;
+}
+continueBtn.disable=true;
+continueBtn.textContent="Signing in..";
+setTimeout(function(){
+    continueBtn.disable=false;
+    continueBtn.textContent="Continue";
+    alert("Demo sign in successful")
+},2000);})
+codeBtn.addEventListener("click",()=>{
+    codeMessage.classList.toggle("show")
+})
+const forgotPassword =document.getElementById("forgotPassword");
+const forgotMessage =   document.getElementById("forgotMessage");
+const resetEmail =  document.getElementById("resetEmail");
+const resetBtn =  document.getElementById("resetBtn");
+forgotPassword.addEventListener("click",(event)=>{
+    event.preventDefault()
+    forgotMessage.classList.toggle("show")
+})
+resetBtn.addEventListener("click",()=>{
+if(resetEmail.value.trim()===""){
+    alert("Please enter yout email or mobile number")
+    resetEmail.focus()
+    return;
+}
+alert("Reset link set Successfully")
+resetEmail.value=""
+})
+</script>
+</body>
+</html>
